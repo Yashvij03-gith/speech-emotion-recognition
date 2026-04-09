@@ -6,17 +6,6 @@ Automatically classify voice recordings into **happy**, **sad**, **angry**, and 
 
 ---
 
-## ✨ Features
-
-- 🎵 Extracts advanced audio features (MFCCs, Chroma, Mel Spectrograms)
-- 🧠 Trained neural network with optimized architecture
-- 🎯 High accuracy on clean audio (91% for angry, 87% recall overall)
-- 💾 Pre-trained model ready for inference
-- 📊 Detailed confidence scores for each emotion
-- ⚡ Fast prediction on new audio files
-
----
-
 ## 🏗️ Project Structure
 
 ```
@@ -24,13 +13,13 @@ speech-emotion-recognition/
 ├── train.py              # Training pipeline
 ├── predict.py            # Inference script
 ├── features.py           # Feature extraction module
-├── emotion_model.pkl     # Trained model (generated)
-├── scaler.pkl           # Feature scaler (generated)
-├── label_encoder.pkl    # Emotion encoder (generated)
 └── data/                # Audio dataset
     ├── Actor_01/
     ├── Actor_02/
     └── ... (24 actors total)
+├── emotion_model.pkl     # Trained model (generated)
+├── scaler.pkl           # Feature scaler (generated)
+└── label_encoder.pkl    # Emotion encoder (generated)
 ```
 
 ---
@@ -115,37 +104,6 @@ Confidence scores:
 | 😢 Sad     | 67% | 74% | 0.70 | Most challenging |
 
 ---
-
-## 🎵 Audio Features
-
-The system extracts **180 features** per audio file:
-
-1. **MFCCs (40 features)**
-   - Mel-Frequency Cepstral Coefficients
-   - Captures timbre and spectral characteristics
-
-2. **Chroma Features (12 features)**
-   - Pitch class information
-   - Reveals musical tone patterns
-
-3. **Mel Spectrogram (128 features)**
-   - Frequency energy distribution over time
-   - Captures dynamic voice properties
-
----
-
-## 🧠 Model Architecture
-
-**Multi-Layer Perceptron (MLP) Classifier**
-- Input Layer: 180 features
-- Hidden Layer 1: 128 neurons (ReLU activation)
-- Hidden Layer 2: 64 neurons (ReLU activation)
-- Output Layer: 4 neurons (softmax for 4 emotions)
-- Solver: Adam optimizer
-- Early stopping: Enabled to prevent overfitting
-
----
-
 ## 📁 Dataset Information
 
 Uses the **RAVDESS dataset** format:
@@ -176,18 +134,6 @@ Uses the **RAVDESS dataset** format:
 
 ---
 
-## 📈 Future Improvements
-
-- [ ] Add more emotion classes (fear, disgust, surprise)
-- [ ] Implement CNN/RNN architectures for temporal features
-- [ ] Data augmentation (pitch shift, time stretch)
-- [ ] Cross-validation for better generalization
-- [ ] Real-time audio stream processing
-- [ ] REST API for deployment
-- [ ] Web UI for easy predictions
-
----
-
 ## 📝 Usage Notes
 
 - **Audio Format**: WAV files (.wav)
@@ -200,16 +146,6 @@ Uses the **RAVDESS dataset** format:
 ## 📄 License
 
 This project uses the RAVDESS dataset for educational purposes.
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Areas for improvement:
-- Better feature engineering
-- Model optimization
-- Dataset expansion
-- Deployment solutions
 
 ---
 
